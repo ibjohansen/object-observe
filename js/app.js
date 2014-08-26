@@ -16,6 +16,8 @@ $('#del_attr').click(function () {
 
 //objektet som vi skal observer endringer på
 var obj = {};
+var e = $('<div>').html(JSON.stringify(obj));
+$('#obj').append(e);
 
 //bruk en try/catch for å sjekke om funksjonen er tilgjengelig
 //og gi beskjed dersom den ikke er det
@@ -39,6 +41,9 @@ function changesCallback(changes) {
         s = s + '<br>' + '<hr>' + '<br>';
         var e = $('<div>').html(s);
         $('#console').append(e);
+
+        var e2 = $('<div>').html(JSON.stringify(obj));
+        $('#obj').html(e2);
     });
 }
 
